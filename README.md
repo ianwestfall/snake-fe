@@ -1,5 +1,9 @@
 # snake-fe
 
+## What is this?
+This is a Vue.js front-end for the related snake-server project. That project hosts a backend server for a WebSockets based Snake game. 
+This front-end is to let me play Snake against that server, and monitor all games of Snake being played on that server, which will eventually be used to train a neural network. 
+
 ## Project setup
 ```
 npm install
