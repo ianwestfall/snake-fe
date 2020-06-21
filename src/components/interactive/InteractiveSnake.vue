@@ -2,8 +2,8 @@
   <div class="interactive-snake-game">
     <div class="options">
       <span>
-        <button @click="playGame">New game</button>
-        <button @click="randomizeGame">Watch the computer play</button>
+        <button @click="playGame" data-cy="new-game-btn">New game</button>
+        <button @click="randomizeGame" data-cy="random-game-btn">Watch the computer play</button>
       </span>
     </div>
     <div class="board">
@@ -77,8 +77,10 @@ export default {
 
       // Send random actions to the game server on an interval
       this.randomInterval = setInterval(() => {
-        const rand = parseInt(Math.floor(Math.random() * 3), 10);
-        this.webSocket.send(`{"rawActionDirection": ${rand}}`);
+        if (this.webSocket.readyState === WebSocket.OPEN) {
+          const rand = parseInt(Math.floor(Math.random() * 3), 10);
+          this.webSocket.send(`{"rawActionDirection": ${rand}}`);
+        }
       }, 50);
     },
   },

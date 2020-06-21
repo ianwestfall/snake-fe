@@ -12,6 +12,7 @@
     <div class="board">
       <div class="row" v-for="row in game.height" :key="`row_${row}`">
         <div class="cell" v-for="col in game.width" :key="`cell_${row}_${col}`"
+             :data-cy="`${col},${row}`"
              :class="{
               snake: isSnakeAtCoord(col - 1, row - 1),
               'snake-head': isSnakeHeadAtCoord(col - 1, row - 1),
