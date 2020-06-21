@@ -4,19 +4,37 @@
       <router-link to="/">Play</router-link> |
       <router-link to="/manage">Manage</router-link>
     </div>
-    <router-view/>
+    <div class="content">
+      <router-view/>
+    </div>
   </div>
 </template>
 
 <style>
-#nav {
-  text-align: center;
+html, body {
+  margin: 0;
+  height: 100%;
 }
+</style>
 
-body {
+<style scoped>
+#app {
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+
   background-color: #32908f;
   font-family: 'Manrope', sans-serif;
   color: #a3e7fc;
+}
+
+#nav {
+  text-align: center;
+  flex: 0 1 auto;
+}
+
+.content {
+  flex: 1 1 auto;
 }
 
 a {

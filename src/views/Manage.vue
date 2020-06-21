@@ -1,11 +1,11 @@
 <template>
-  <div>
+  <div class="full-height">
     <SnakeManager></SnakeManager>
   </div>
 </template>
 
 <script>
-import SnakeManager from '@/components/SnakeManager.vue';
+import SnakeManager from '@/components/manager/SnakeManager.vue';
 
 export default {
   name: 'Manager',
@@ -16,4 +16,7 @@ export default {
 </script>
 
 <style scoped>
+.full-height {
+  height: 100%;
+}
 </style>
